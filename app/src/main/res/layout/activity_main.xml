@@ -1,0 +1,1742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animateLayoutChanges="true"
+    android:id="@+id/myCoordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardBank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="36dp"
+            card_view:cardCornerRadius="2dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/bank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="32sp"
+                        android:text="@string/no_cookies"
+                        android:layout_centerInParent="true" />
+
+                    <ImageView
+                        android:id="@+id/bankExpandArrow"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/arrow_expand"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/total_produced"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardPerSecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="36dp"
+            card_view:cardCornerRadius="2dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp">
+
+            <TextView
+                android:id="@+id/perSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:text="@string/production_second"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v4.widget.NestedScrollView
+            android:animateLayoutChanges="true"
+            android:id="@+id/buildings_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:animateLayoutChanges="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding1"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building1name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building1_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="end"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building1amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="end"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building1expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building1flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building1_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building1sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building1cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building1purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building1expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding2"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="8dp"
+
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building2name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building2_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building2amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building2expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building2flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building2_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building2sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building2cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building2purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building2expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding3"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building3name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building3_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building3amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building3expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building3flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building3_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building3sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building3cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building3purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building3expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding4"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building4name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building4_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building4amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building4expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building4flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building4_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building4sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building4cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building4purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building4expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding5"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building5name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building5_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building5amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building5expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building5flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building5_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building5sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building5cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building5purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building5expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding6"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building6name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building6_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building6amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building6expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building6flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building6_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building6sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building6cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building6purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building6expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding7"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building7name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building7_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building7amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building7expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building7flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building7_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building7sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building7cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building7purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building7expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding8"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building8name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building8_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building8amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building8expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building8flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building8_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building8sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building8cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building8purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building8expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding9"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building9name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building9_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building9amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building9expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building9flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building9_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building9sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building9cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building9purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building9expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding10"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building10name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building10_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building10amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building10expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building10flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building10_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building10sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building10cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building10purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building10expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding11"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building11name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building11_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building11amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building11expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building11flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building11_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building11sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building11cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building11purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building11expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cardBuilding12"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="36dp"
+                    card_view:cardCornerRadius="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    card_view:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:id="@+id/building12name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/building12_name"
+                                android:textColor="@color/md_black_1000"
+                                android:textSize="28sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building12amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="x0"
+                                android:textSize="24sp"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/building12expandedLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/building12flavour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/building12_flavour"
+                                    android:textSize="18sp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/building12sell"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="sell"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/md_red_400"
+                                    android:layout_weight="0"
+                                    android:layout_gravity="right" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <TextView
+                                android:id="@+id/building12cost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:layout_gravity="left"
+                                android:gravity="left"
+                                android:layout_weight="1"/>
+
+                            <TextView
+                                android:id="@+id/building12purchase"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="purchase"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_red_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="      "
+                                android:layout_weight="0"/>
+
+                            <TextView
+                                android:id="@+id/building12expand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:text="expand"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/md_blue_400"
+                                android:layout_gravity="right"
+                                android:layout_weight="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/cookie_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/cookie"
+                android:src="@drawable/cookie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="250dp"
+                android:minHeight="250dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="8"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/upgrades_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/upgradesRecyclerView"/>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

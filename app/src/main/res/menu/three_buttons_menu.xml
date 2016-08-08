@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/buildings_bottombar"
+        android:icon="@drawable/ic_house_icon"
+        android:title="Buildings" />
+
+    <item
+        android:id="@+id/cookie_bottombar"
+        android:icon="@drawable/ic_cookies_icon"
+        android:title="Cookie!" />
+
+    <item
+        android:id="@+id/upgrades_bottombar"
+        android:icon="@drawable/ic_up_icon"
+        android:title="Upgrades" />
+
+</menu>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">CookieClicker</string>
+
+
+    <string name="building1_name">Finger</string>
+    <string name="building2_name">Grandma</string>
+    <string name="building3_name">Farm</string>
+    <string name="building4_name">Mine</string>
+    <string name="building5_name">Factory</string>
+    <string name="building6_name">Bank</string>
+    <string name="building7_name">Temple</string>
+    <string name="building8_name">Wizard Tower</string>
+    <string name="building9_name">Shipment</string>
+    <string name="building10_name">Alchemy Lab</string>
+    <string name="building11_name">Portal</string>
+    <string name="building12_name">Time Machine</string>
+
+    <string name="building1_flavour">A simple way of avoiding to tap on cookie yourself</string>
+    <string name="building2_flavour">A lovely grandma with a pretty large oven</string>
+    <string name="building3_flavour">Hiring a hipster to farm cookie-plants on a cookie-farm is just too weird</string>
+    <string name="building4_flavour">Mine cookies directly from the veins (not human ones)</string>
+    <string name="building5_flavour">A big buisness not unlike all others</string>
+    <string name="building6_flavour">People are still stupid enough to make cookie-loans</string>
+    <string name="building7_flavour"></string>
+    <string name="building8_flavour"></string>
+    <string name="building9_flavour"></string>
+    <string name="building10_flavour"></string>
+    <string name="building11_flavour"></string>
+    <string name="building12_flavour"></string>
+
+    <string name="no_cookies">You don\'t have any cookies</string>
+    <string name="total_produced">Total amount of cookies produced</string>
+    <string name="production_second">Production amount per second</string>
+
+
+</resources>
